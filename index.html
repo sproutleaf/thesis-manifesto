@@ -88,14 +88,14 @@
                             how we create amazing thesis projects: beyond individually, as a community.</p>
                     </div>
                     <div class="m">
-                        <p><span>Be each other’s expert and teacher.</span>We come from diverse backgrounds, often
+                        <p><span>Be each other’s expert and teacher.</span> We come from diverse backgrounds, often
                             already specialists in the fields we worked in. A sophisticated thesis project, on the other
                             hand, is most often expansive and relies on knowledge and proficiency beyond our own.
                             Trading expertise can be a sweet and generative way of growing our projects together, while
                             understanding each other more as individuals and artists.</p>
                     </div>
                     <div class="m">
-                        <p><span>Celebrate milestones together.</span>The end of thesis week should not be the only
+                        <p><span>Celebrate milestones together.</span> The end of thesis week should not be the only
                             occasion for relaxation and conviviality; smaller steps—commitment to an idea, first
                             prototype, alumni critiques…—deserve attention and joy too. Celebrate milestones together
                             and often, be open enough to let these moments carry us forward.</p>
@@ -133,13 +133,22 @@
         </div>
 
         <div id="foot">
-            <div id="about">⁂ about ⁂</div>
+            <div id="about" onclick="showContent('popup')">⁂ about ⁂</div>
         </div>
     </div>
 
     <div id="popup">
         <div id="popup-content">
-            Hello hehehe
+            <p>Thesis Manifesto was originally created for Tega Brain's class: Crafting the Web. Maintained and updated
+                with care.</p>
+            <br>
+            <p>Special thanks to: Jo Suk & Yi-Chun Lan for conversations about thesis, Chia Amisola for <a
+                    href="https://chias.website/manifesto/" target="_blank" rel="noopener noreferrer">MANIFESTO FOR
+                    (WEB)SITE–SPECIFIC ART</a>, Malte Müller for <a href="http://www--arc.com/" target="_blank"
+                    rel="noopener noreferrer">WEB DESIGN AS ARCHITECTURE</a>.
+            </p>
+            <br>
+            <p style="text-align: center;">(CLICK ANYWHERE IN THIS WINDOW TO CLOSE)</p>
         </div>
     </div>
 
@@ -153,20 +162,28 @@
                 "50vw" : "90vw";
 
         }
-        // A function that shows / hides the list items when clicking on section title. I wrote this and decided to not use it.
         function showContent(e) {
             let x = document.getElementById(e);
             console.log(x.style.display);
             if (!x.style.display || x.style.display == 'none') {
-                x.style.display = 'block';
-            } else {
-                x.style.display = 'none';
+                x.style.display = 'flex';
+                let w = document.getElementById("w");
+                w.style.filter = "blur(3px)";
             }
         }
         (window.onload = resetContainerSize),
             (window.onresize = resetContainerSize), (q("body").style.backgroundImage = `radial-gradient(circle, 
             rgba(${r(90, 255)}, ${r(90, 255)}, ${r(90, 255)}, 0.8), 
             rgba(${r(90, 255)}, ${r(90, 255)}, ${r(90, 255)}, 0.8))`);
+
+        q("#popup").addEventListener('click', () => {
+            let popup = document.getElementById("popup");
+            if (popup.style.display == 'flex') {
+                popup.style.display = 'none';
+                w.style.filter = null;
+            }
+        });
+
     </script>
 
 </body>
