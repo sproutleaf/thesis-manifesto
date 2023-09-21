@@ -26,6 +26,8 @@ div {
 
 body {
     overflow: hidden;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 a {
@@ -35,6 +37,7 @@ a {
 #w {
     width: 100vw;
     height: 100vh;
+    height: -webkit-fill-available;
 }
 
 #content {
@@ -189,7 +192,6 @@ span:hover {
     padding: 5px;
     line-height: 110%;
     width: 90%;
-    border-radius: 25px;
     /* Could be more or less, depending on screen size */
     overflow: scroll;
 }
